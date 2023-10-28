@@ -4,21 +4,24 @@ enum class Direction {
 
 fun moveRobot(r: Robot, toX: Int, toY: Int) {
     while (r.x != toX || r.y != toY) {
-        if (r.x < toX) {
-            r.direction = Direction.RIGHT
-            r.stepForward()
-        } else if (r.x > toX) {
-            r.direction = Direction.LEFT
-            r.stepForward()
+        if (toX > r.x) {
+            while (r.direction != Direction.RIGHT) {
+                r.turnRight()
+            }
+        } else if (toX < r.x) {
+            while (r.direction != Direction.LEFT) {
+                r.turnLeft()
+            }
+        } else if (toY > r.y) {
+            while (r.direction != Direction.UP) {
+                r.turnRight()
+            }
+        } else if (toY < r.y) {
+            while (r.direction != Direction.DOWN) {
+                r.turnLeft()
+            }
         }
-
-        if (r.y < toY) {
-            r.direction = Direction.UP
-            r.stepForward()
-        } else if (r.y > toY) {
-            r.direction = Direction.DOWN
-            r.stepForward()
-        }
+        r.stepForward()
     }
 }
 
