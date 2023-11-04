@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinnerFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/cities"
+                android:minHeight="48dp" />
+
+            <ImageView
+                android:id="@+id/ic_airplane"
+                android:layout_width="158dp"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="0dp"
+                app:srcCompat="@drawable/ic_airplane" />
+
+            <Spinner
+                android:id="@+id/spinnerTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/cities"
+                android:minHeight="48dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:gravity="end|fill_vertical">
+
+            <TextView
+                android:id="@+id/datePickerFrom"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="568dp"
+                android:layout_weight="1"
+                android:gravity="start|center_vertical"
+                android:text="Туда"
+                android:textSize="48px" />
+
+            <TextView
+                android:id="@+id/datePickerTo"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="568dp"
+                android:layout_weight="1"
+                android:gravity="end|center_vertical"
+                android:text="Обратно"
+                android:textSize="48px" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:paddingRight="10dp"
+                android:gravity="center">
+
+                    <NumberPicker
+                        android:id="@+id/adultCount"
+                        android:layout_width="fill_parent"
+                        android:layout_height="52dp"
+                        android:width="100dp"
+                        android:gravity="center" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dp"
+                    android:textSize="48px"
+                    android:text="Взрослый"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:paddingHorizontal="5dp"
+                android:gravity="center">
+
+                <NumberPicker
+                    android:id="@+id/childrenCount"
+                    android:layout_width="fill_parent"
+                    android:layout_height="52dp"
+                    android:width="100dp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dp"
+                    android:textSize="48px"
+                    android:text="Ребёнок"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:gravity="center">
+
+                <NumberPicker
+                    android:id="@+id/babyCount"
+                    android:layout_width="fill_parent"
+                    android:layout_height="52dp"
+                    android:width="100dp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dp"
+                    android:textSize="48px"
+                    android:text="Младенец"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
