@@ -1,4 +1,3 @@
-# pip install mypy
 import pytest
 from interpreter.ast import Number, BinOp, UnaryOp
 from interpreter.token import Token, TokenType
