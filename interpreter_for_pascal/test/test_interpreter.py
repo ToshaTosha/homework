@@ -1,8 +1,8 @@
 import pytest
 
-from interpreter_for_pascal.interpreter.interpreter import NodeVisitor, Interpreter, Parser
-from interpreter_for_pascal.interpreter.ast import BinOp, Number, UnOp, Empty, Variable
-from interpreter_for_pascal.interpreter.token import Token, TokenType
+from interpreter.interpreter import NodeVisitor, Interpreter, Parser
+from interpreter.ast import BinOp, Number, UnOp, Empty, Variable
+from interpreter.token import Token, TokenType
 
 @pytest.fixture(scope="function")
 def interpreter():
