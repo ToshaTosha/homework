@@ -12,7 +12,7 @@ def find_pencil(file):
     binary_img = cv2.bitwise_not(threshold_img)
     labeled = label(binary_img)
     for region in regionprops(labeled):
-        if region.perimeter > 2000 and 30 > (region.major_axis_length / region.minor_axis_length) > 15:
+        if region.perimeter > 1000 and 30 > (region.major_axis_length / region.minor_axis_length) > 10:
             pencils += 1
 
     return pencils
