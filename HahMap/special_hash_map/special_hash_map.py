@@ -39,6 +39,7 @@ class Ploc:
         operations = ["<", ">", "=", "<=", ">=", "<>"]
         return operation in operations and number.isdigit()
 
+    @staticmethod
     def parse_condition(_condition):
         cleaned_condition = "".join(_condition.split())
         conditions = []
@@ -50,12 +51,18 @@ class Ploc:
                     condition["op"] += char
                 elif char.isdigit():
                     condition["num"] += char
-
+                elif char == ",":
+                    if Ploc.condition(condition["op"], condition["num"]):
+                        condition["num"] = float(condition["num"])
+                        conditions.append(condition)
+                    else:
+                        raise SyntaxError("Неправильное условие")
+                    condition = {"op": "", "num": ""}
             if Ploc.condition(condition["op"], condition["num"]):
                 condition["num"] = float(condition["num"])
                 conditions.append(condition)
             else:
-                raise SyntaxError("Неправильное условие")
+                raise SyntaxError("Bad condition")
 
         return conditions
 
@@ -95,10 +102,7 @@ class Ploc:
                     break
 
             if compared:
-                if len(answer) > 2:
-                    answer += f", {k}={v}"
-                else:
-                    answer += f"{k}={v}"
+                answer += f", {k} = {v}" if len(answer) > 1 else f"{k} = {v}"
 
         answer += "}"
         return answer
