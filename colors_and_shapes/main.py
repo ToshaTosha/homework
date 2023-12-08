@@ -5,7 +5,8 @@ from skimage.measure import label, regionprops
 
 image = plt.imread("balls_and_rects.png")
 hsv = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
-binary = image.mean(2) > 0
+image_mean = np.mean(image, axis=2)
+binary = image_mean > 0
 
 
 def clustering(colors):
