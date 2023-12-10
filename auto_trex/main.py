@@ -21,7 +21,7 @@ start_time = time.time()
 def calculatedistanceThreshold():
     current_time = time.time()
     score = (current_time - start_time) * 10
-    return score / 10000
+    return score / 15000
  
 
 def screen_record():
