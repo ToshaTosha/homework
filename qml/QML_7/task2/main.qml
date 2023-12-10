@@ -6,7 +6,7 @@ import QtQuick.Layouts 1.12
 Window {
     width: 480
     height: 600
-    title: 'Login_Page'
+    title: 'Password'
     visible: true
 
     property string passwordField: ""
