@@ -1,4 +1,4 @@
-from special_hash_map import SpecialHashMap
+from ..special_hash_map.special_hash_map import SpecialHashMap
 import pytest
 
 @pytest.fixture()
