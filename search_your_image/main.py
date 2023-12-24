@@ -4,7 +4,6 @@ import numpy as np
 
 def match_template_in_video(template_image_path, video_path, match_threshold=0.7):
     count = 0
-    all_images = 0
     video = cv2.VideoCapture(video_path)
     template_img = cv2.imread(template_image_path, cv2.IMREAD_GRAYSCALE)
 
@@ -19,7 +18,6 @@ def match_template_in_video(template_image_path, video_path, match_threshold=0.7
             count += 1
             cv2.imshow('Matched Frame', frame)
             cv2.waitKey(0)
-        all_images += 1
 
     video.release()
     print(f"Моё изображение в видео: {count}")
